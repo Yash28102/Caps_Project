@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testcases.Failures">
+        <methods>
+          <include name="blankEmailTest"/>
+          <include name="classTeardownHook"/>
+          <include name="invalidPinTest"/>
+          <include name="validLogin"/>
+          <include name="captureSS"/>
+          <include name="globalTeardownHook"/>
+          <include name="invalidMobileTest"/>
+          <include name="invalidLoginScreenshot"/>
+          <include name="classSetupHook"/>
+          <include name="invalidCityStateTest"/>
+          <include name="customerNameWithIntegers"/>
+          <include name="globalSetupHook"/>
+        </methods>
+      </class> <!-- testcases.Failures -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

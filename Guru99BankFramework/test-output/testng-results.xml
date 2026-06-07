@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="1" failed="6" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-06T17:53:09 IST" name="Default suite" finished-at="2026-06-06T17:53:33 IST" duration-ms="24104">
+    <groups>
+    </groups>
+    <test started-at="2026-06-06T17:53:09 IST" name="Default test" finished-at="2026-06-06T17:53:33 IST" duration-ms="24104">
+      <class name="testcases.Failures">
+        <test-method is-config="true" signature="globalSetupHook()[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:08 IST" name="globalSetupHook" description="Global Suite Setup Hook" finished-at="2026-06-06T17:53:09 IST" duration-ms="752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalSetupHook -->
+        <test-method is-config="true" signature="classSetupHook()[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:09 IST" name="classSetupHook" description="Class Browser Instantiation Hook" finished-at="2026-06-06T17:53:15 IST" duration-ms="5756" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classSetupHook -->
+        <test-method signature="invalidLoginScreenshot()[pri:1, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:15 IST" name="invalidLoginScreenshot" finished-at="2026-06-06T17:53:18 IST" duration-ms="2867" status="FAIL">
+          <exception class="org.openqa.selenium.NoAlertPresentException">
+            <message>
+              <![CDATA[no such alert
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, acceptAlert {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, acceptAlert {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteAlert.accept(RemoteWebDriver.java:1206)
+at testcases.Failures.invalidLoginScreenshot(Failures.java:40)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoAlertPresentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLoginScreenshot -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:18 IST" name="captureSS" finished-at="2026-06-06T17:53:18 IST" duration-ms="167" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidLoginScreenshot status=FAILURE method=Failures.invalidLoginScreenshot()[pri:1, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="validLogin()[pri:2, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:18 IST" name="validLogin" finished-at="2026-06-06T17:53:22 IST" duration-ms="3818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLogin -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:22 IST" name="captureSS" finished-at="2026-06-06T17:53:22 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validLogin status=SUCCESS method=Failures.validLogin()[pri:2, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="customerNameWithIntegers()[pri:3, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:22 IST" name="customerNameWithIntegers" finished-at="2026-06-06T17:53:27 IST" depends-on-methods="testcases.Failures.validLogin" duration-ms="5179" status="FAIL">
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[unexpected alert open: {Alert text : please fill all fields}
+  (Session info: MicrosoftEdge=149.0.4022.52): please fill all fields
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, findElement {value=//td[text()='Customer ID']/following-sibling::td, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : please fill all fields}
+  (Session info: MicrosoftEdge=149.0.4022.52): please fill all fields
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, findElement {value=//td[text()='Customer ID']/following-sibling::td, using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+at pages.CustomerPage.createCustomer(CustomerPage.java:77)
+at testcases.Failures.customerNameWithIntegers(Failures.java:64)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerNameWithIntegers -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:27 IST" name="captureSS" finished-at="2026-06-06T17:53:27 IST" duration-ms="134" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=customerNameWithIntegers status=FAILURE method=Failures.customerNameWithIntegers()[pri:3, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="invalidPinTest()[pri:4, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:27 IST" name="invalidPinTest" finished-at="2026-06-06T17:53:28 IST" depends-on-methods="testcases.Failures.validLogin" duration-ms="1084" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at pages.CustomerPage.clickNewCustomer(CustomerPage.java:46)
+at testcases.Failures.invalidPinTest(Failures.java:83)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidPinTest -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:28 IST" name="captureSS" finished-at="2026-06-06T17:53:28 IST" duration-ms="102" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidPinTest status=FAILURE method=Failures.invalidPinTest()[pri:4, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="blankEmailTest()[pri:5, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:28 IST" name="blankEmailTest" finished-at="2026-06-06T17:53:29 IST" depends-on-methods="testcases.Failures.validLogin" duration-ms="1202" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at pages.CustomerPage.clickNewCustomer(CustomerPage.java:46)
+at testcases.Failures.blankEmailTest(Failures.java:105)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankEmailTest -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:29 IST" name="captureSS" finished-at="2026-06-06T17:53:29 IST" duration-ms="84" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=blankEmailTest status=FAILURE method=Failures.blankEmailTest()[pri:5, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="invalidMobileTest()[pri:6, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:29 IST" name="invalidMobileTest" finished-at="2026-06-06T17:53:30 IST" depends-on-methods="testcases.Failures.validLogin" duration-ms="1099" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at pages.CustomerPage.clickNewCustomer(CustomerPage.java:46)
+at testcases.Failures.invalidMobileTest(Failures.java:127)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidMobileTest -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:30 IST" name="captureSS" finished-at="2026-06-06T17:53:31 IST" duration-ms="83" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidMobileTest status=FAILURE method=Failures.invalidMobileTest()[pri:6, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="invalidCityStateTest()[pri:7, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:31 IST" name="invalidCityStateTest" finished-at="2026-06-06T17:53:32 IST" depends-on-methods="testcases.Failures.validLogin" duration-ms="1083" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="addcustomerpage.php">...</a> is not clickable at point (120, 18). Other element would receive the click: <img src="/logo.png" alt="Guru99 Demo Sites" role="presentation">
+  (Session info: MicrosoftEdge=149.0.4022.52)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [761660ac5b186b75a52a1e54aa72a86c, clickElement {id=f.251DC7B48118F36823406F3400B5F908.d.798266361604C80B8ADB0004BDECE840.e.135}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.52, fedcm:accounts: true, goog:processID: 14008, ms:edgeOptions: {debuggerAddress: localhost:61897}, msedge: {msedgedriverVersion: 149.0.4022.52 (ebf9b65f6b0d..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61897/devtoo..., se:cdpVersion: 149.0.4022.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (761660ac5b186b75a52a1e54aa72a86c)] -> xpath: //a[text()='New Customer']]
+Session ID: 761660ac5b186b75a52a1e54aa72a86c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at pages.CustomerPage.clickNewCustomer(CustomerPage.java:46)
+at testcases.Failures.invalidCityStateTest(Failures.java:149)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCityStateTest -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:32 IST" name="captureSS" finished-at="2026-06-06T17:53:32 IST" duration-ms="81" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=invalidCityStateTest status=FAILURE method=Failures.invalidCityStateTest()[pri:7, instance:testcases.Failures@bf1ec20] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method is-config="true" signature="classTeardownHook()[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:32 IST" name="classTeardownHook" description="Class Browser Teardown Hook" finished-at="2026-06-06T17:53:33 IST" duration-ms="1213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classTeardownHook -->
+        <test-method is-config="true" signature="globalTeardownHook()[pri:0, instance:testcases.Failures@bf1ec20]" started-at="2026-06-06T17:53:33 IST" name="globalTeardownHook" description="Global Suite Teardown Hook" finished-at="2026-06-06T17:53:34 IST" duration-ms="463" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalTeardownHook -->
+      </class> <!-- testcases.Failures -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

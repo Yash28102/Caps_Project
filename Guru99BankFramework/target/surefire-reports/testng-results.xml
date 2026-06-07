@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-06T17:56:56 IST" name="Guru99 Bank Automation Master Suite" finished-at="2026-06-06T17:57:37 IST" duration-ms="41051">
+    <groups>
+    </groups>
+    <test started-at="2026-06-06T17:56:56 IST" name="EndToEndBankingModuleWorkflows" finished-at="2026-06-06T17:57:37 IST" duration-ms="41051">
+      <class name="testcases.EndToEndBankingTest">
+        <test-method is-config="true" signature="globalSetupHook()[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:56:56 IST" name="globalSetupHook" description="Global Suite Setup Hook" finished-at="2026-06-06T17:56:56 IST" duration-ms="315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalSetupHook -->
+        <test-method is-config="true" signature="classSetupHook()[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:56:56 IST" name="classSetupHook" description="Class Browser Instantiation Hook" finished-at="2026-06-06T17:57:01 IST" duration-ms="5412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classSetupHook -->
+        <test-method signature="testLoginModule()[pri:1, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:01 IST" name="testLoginModule" description="LOGIN" finished-at="2026-06-06T17:57:05 IST" duration-ms="3222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:05 IST" name="captureSS" finished-at="2026-06-06T17:57:05 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginModule status=SUCCESS method=EndToEndBankingTest.testLoginModule()[pri:1, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testNewCustomer1Module()[pri:2, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:05 IST" name="testNewCustomer1Module" description="CREATE CUSTOMER 1" finished-at="2026-06-06T17:57:11 IST" duration-ms="6127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNewCustomer1Module -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:11 IST" name="captureSS" finished-at="2026-06-06T17:57:11 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNewCustomer1Module status=SUCCESS method=EndToEndBankingTest.testNewCustomer1Module()[pri:2, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testNewCustomer2Module()[pri:3, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:11 IST" name="testNewCustomer2Module" description="CREATE CUSTOMER 2" finished-at="2026-06-06T17:57:16 IST" duration-ms="5509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNewCustomer2Module -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:16 IST" name="captureSS" finished-at="2026-06-06T17:57:16 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNewCustomer2Module status=SUCCESS method=EndToEndBankingTest.testNewCustomer2Module()[pri:3, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testDepositModule()[pri:4, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:16 IST" name="testDepositModule" description="DEPOSIT" finished-at="2026-06-06T17:57:20 IST" duration-ms="3424" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDepositModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:20 IST" name="captureSS" finished-at="2026-06-06T17:57:20 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDepositModule status=SUCCESS method=EndToEndBankingTest.testDepositModule()[pri:4, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testWithdrawalModule()[pri:5, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:20 IST" name="testWithdrawalModule" description="WITHDRAWAL" finished-at="2026-06-06T17:57:23 IST" duration-ms="3174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithdrawalModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:23 IST" name="captureSS" finished-at="2026-06-06T17:57:23 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWithdrawalModule status=SUCCESS method=EndToEndBankingTest.testWithdrawalModule()[pri:5, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testFundTransferModule()[pri:6, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:23 IST" name="testFundTransferModule" description="FUND TRANSFER" finished-at="2026-06-06T17:57:27 IST" duration-ms="4103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFundTransferModule -->
+        <test-method signature="testCustomStatementModule()[pri:9, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:27 IST" name="testCustomStatementModule" description="CUSTOM STATEMENT" finished-at="2026-06-06T17:57:30 IST" duration-ms="3134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCustomStatementModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:27 IST" name="captureSS" finished-at="2026-06-06T17:57:27 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFundTransferModule status=SUCCESS method=EndToEndBankingTest.testFundTransferModule()[pri:6, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testEditAccountModule()[pri:10, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:30 IST" name="testEditAccountModule" description="EDIT ACCOUNT" finished-at="2026-06-06T17:57:31 IST" duration-ms="791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditAccountModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:30 IST" name="captureSS" finished-at="2026-06-06T17:57:30 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCustomStatementModule status=SUCCESS method=EndToEndBankingTest.testCustomStatementModule()[pri:9, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:31 IST" name="captureSS" finished-at="2026-06-06T17:57:31 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testEditAccountModule status=SUCCESS method=EndToEndBankingTest.testEditAccountModule()[pri:10, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testChangePasswordModule()[pri:11, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:31 IST" name="testChangePasswordModule" description="CHANGE PASSWORD" finished-at="2026-06-06T17:57:32 IST" duration-ms="1119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChangePasswordModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:32 IST" name="captureSS" finished-at="2026-06-06T17:57:32 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testChangePasswordModule status=SUCCESS method=EndToEndBankingTest.testChangePasswordModule()[pri:11, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testDeleteAccountModule()[pri:12, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:32 IST" name="testDeleteAccountModule" description="DELETE ACCOUNT" finished-at="2026-06-06T17:57:33 IST" duration-ms="1280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteAccountModule -->
+        <test-method signature="testDeleteCustomerModule()[pri:13, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:33 IST" name="testDeleteCustomerModule" description="DELETE CUSTOMER" finished-at="2026-06-06T17:57:35 IST" duration-ms="1304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteCustomerModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:33 IST" name="captureSS" finished-at="2026-06-06T17:57:33 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDeleteAccountModule status=SUCCESS method=EndToEndBankingTest.testDeleteAccountModule()[pri:12, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:35 IST" name="captureSS" finished-at="2026-06-06T17:57:35 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testDeleteCustomerModule status=SUCCESS method=EndToEndBankingTest.testDeleteCustomerModule()[pri:13, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method signature="testLogoutModule()[pri:14, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:35 IST" name="testLogoutModule" description="LOGOUT" finished-at="2026-06-06T17:57:37 IST" duration-ms="1913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogoutModule -->
+        <test-method is-config="true" signature="captureSS(org.testng.ITestResult)[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:37 IST" name="captureSS" finished-at="2026-06-06T17:57:37 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLogoutModule status=SUCCESS method=EndToEndBankingTest.testLogoutModule()[pri:14, instance:testcases.EndToEndBankingTest@31000e60] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureSS -->
+        <test-method is-config="true" signature="classTeardownHook()[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:37 IST" name="classTeardownHook" description="Class Browser Teardown Hook" finished-at="2026-06-06T17:57:37 IST" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- classTeardownHook -->
+        <test-method is-config="true" signature="globalTeardownHook()[pri:0, instance:testcases.EndToEndBankingTest@31000e60]" started-at="2026-06-06T17:57:37 IST" name="globalTeardownHook" description="Global Suite Teardown Hook" finished-at="2026-06-06T17:57:37 IST" duration-ms="468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalTeardownHook -->
+      </class> <!-- testcases.EndToEndBankingTest -->
+    </test> <!-- EndToEndBankingModuleWorkflows -->
+  </suite> <!-- Guru99 Bank Automation Master Suite -->
+</testng-results>

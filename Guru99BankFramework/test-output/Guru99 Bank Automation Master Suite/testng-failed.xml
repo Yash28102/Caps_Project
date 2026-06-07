@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Guru99 Bank Automation Master Suite]" guice-stage="DEVELOPMENT" verbose="2">
+  <listeners>
+    <listener class-name="base.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="EndToEndBankingModuleWorkflows(failed)" verbose="2">
+    <classes>
+      <class name="testcases.EndToEndBankingTest">
+        <methods>
+          <include name="testNewAccount"/>
+          <include name="testCustomStatement"/>
+          <include name="testWithdrawal"/>
+          <include name="testLogin"/>
+          <include name="testDeposit"/>
+          <include name="testDeleteAccount"/>
+          <include name="testChangePassword"/>
+          <include name="testLogout"/>
+          <include name="testDeleteCustomer"/>
+          <include name="classTeardownHook"/>
+          <include name="testFundTransfer"/>
+          <include name="globalTeardownHook"/>
+          <include name="testMiniStatement"/>
+          <include name="testEditAccount"/>
+          <include name="testNewCustomer"/>
+          <include name="testBalanceEnquiry"/>
+          <include name="classSetupHook"/>
+          <include name="globalSetupHook"/>
+        </methods>
+      </class> <!-- testcases.EndToEndBankingTest -->
+    </classes>
+  </test> <!-- EndToEndBankingModuleWorkflows(failed) -->
+</suite> <!-- Failed suite [Guru99 Bank Automation Master Suite] -->
