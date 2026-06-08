@@ -28,6 +28,13 @@ pipeline {
             }
         }
         }
+        stage('Build and Test') {
+            steps {
+                dir('Guru99BankFramework') {
+                    bat 'mvn clean'
+                }
+            }
+        }
  
         stage('Test') {
             steps {
@@ -37,13 +44,7 @@ pipeline {
         }
         }
  
-        stage('Build and Test') {
-            steps {
-                dir('Guru99BankFramework') {
-                    bat 'mvn clean test'
-                }
-            }
-        }
+        
 
         stage('Package') {
             steps {
