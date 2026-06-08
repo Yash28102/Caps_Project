@@ -22,34 +22,34 @@ public class DriverFactory {
 
         switch (browser.toLowerCase()) {
 
-            case "edge":
-
-                System.setProperty(
-                        "webdriver.edge.driver",
-                        "C:\\Drivers\\msedgedriver.exe"
-                );
-
-                EdgeOptions edgeOptions = new EdgeOptions();
-
-                edgeOptions.addArguments("--remote-allow-origins=*");
-                edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
-
-                if (isJenkins) {
-                    System.out.println("Running Edge in Jenkins Headless Mode");
-
-                    edgeOptions.addArguments("--headless=new");
-                    edgeOptions.addArguments("--disable-gpu");
-                    edgeOptions.addArguments("--no-sandbox");
-                    edgeOptions.addArguments("--disable-dev-shm-usage");
-                    edgeOptions.addArguments("--window-size=1920,1080");
-
-                } else {
-                    System.out.println("Running Edge in Local Mode");
-                    edgeOptions.addArguments("--start-maximized");
-                }
-
-                driver = new EdgeDriver(edgeOptions);
-                break;
+//            case "edge":
+//
+//                System.setProperty(
+//                        "webdriver.edge.driver",
+//                        "C:\\Drivers\\msedgedriver.exe"
+//                );
+//
+//                EdgeOptions edgeOptions = new EdgeOptions();
+//
+//                edgeOptions.addArguments("--remote-allow-origins=*");
+//                edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
+//
+//                if (isJenkins) {
+//                    System.out.println("Running Edge in Jenkins Headless Mode");
+//
+//                    edgeOptions.addArguments("--headless=new");
+//                    edgeOptions.addArguments("--disable-gpu");
+//                    edgeOptions.addArguments("--no-sandbox");
+//                    edgeOptions.addArguments("--disable-dev-shm-usage");
+//                    edgeOptions.addArguments("--window-size=1920,1080");
+//
+//                } else {
+//                    System.out.println("Running Edge in Local Mode");
+//                    edgeOptions.addArguments("--start-maximized");
+//                }
+//
+//               // driver = new EdgeDriver(edgeOptions);
+//                break;
 
             case "chrome":
 
