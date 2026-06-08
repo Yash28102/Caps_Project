@@ -28,4 +28,4 @@ COPY . .
 
 RUN mvn clean install -DskipTests
 
-CMD ["mvn", "-Dtest=testcases.EndToEndBankingTest", "test"]
+CMD ["mvn", "-Dtest=runner.TestRunner", "test"]
