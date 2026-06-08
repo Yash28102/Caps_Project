@@ -1,0 +1,81 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven3'
+        jdk 'JDK'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'master',
+                    url: 'https://github.com/Yash28102/Caps_Project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('Guru99BankFramework') {
+                    bat 'mvn clean'
+                }
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                dir('Guru99BankFramework') {
+                    bat 'mvn compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('Guru99BankFramework') {
+                    bat 'mvn test'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                dir('Guru99BankFramework') {
+                    bat 'mvn package'
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t guru99-framework .'
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                bat 'docker run --rm guru99-framework'
+            }
+        }
+    }
+
+    post {
+
+        always {
+            junit allowEmptyResults: true,
+                  testResults: '**/target/surefire-reports/*.xml'
+
+            archiveArtifacts artifacts: '**/target/*.jar',
+                             fingerprint: true
+        }
+
+        success {
+            echo 'Build Successful'
+        }
+
+        failure {
+            echo 'Build Failed'
+        }
+    }
+}
