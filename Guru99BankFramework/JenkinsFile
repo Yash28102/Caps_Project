@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3'
         jdk 'JDK'
+        maven 'Maven3'
     }
 
     stages {
@@ -11,30 +11,21 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Yash28102/Caps_Project.git'
+                url: 'https://github.com/Yash28102/Caps_Project.git'
             }
         }
 
-        stage('Build') {
+        stage('Verify Workspace') {
             steps {
-                dir('Guru99BankFramework') {
-                    bat 'mvn clean'
-                }
+                bat 'dir'
+                bat 'dir /s'
             }
         }
 
-        stage('Compile') {
+        stage('Build and Test') {
             steps {
                 dir('Guru99BankFramework') {
-                    bat 'mvn compile'
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                dir('Guru99BankFramework') {
-                    bat 'mvn test'
+                    bat 'mvn clean test'
                 }
             }
         }
@@ -42,40 +33,24 @@ pipeline {
         stage('Package') {
             steps {
                 dir('Guru99BankFramework') {
-                    bat 'mvn package'
+                    bat 'mvn package -DskipTests'
                 }
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Docker Build') {
             steps {
-                bat 'docker build -t guru99-framework .'
-            }
-        }
-
-        stage('Docker Run') {
-            steps {
-                bat 'docker run --rm guru99-framework'
+                dir('Guru99BankFramework') {
+                    bat 'docker build -t guru99-framework .'
+                }
             }
         }
     }
 
     post {
-
         always {
-            junit allowEmptyResults: true,
-                  testResults: '**/target/surefire-reports/*.xml'
-
-            archiveArtifacts artifacts: '**/target/*.jar',
-                             fingerprint: true
-        }
-
-        success {
-            echo 'Build Successful'
-        }
-
-        failure {
-            echo 'Build Failed'
+            junit '**/target/surefire-reports/*.xml'
+            archiveArtifacts '**/target/*.jar'
         }
     }
 }
