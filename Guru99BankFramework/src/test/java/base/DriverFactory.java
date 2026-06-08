@@ -17,7 +17,7 @@ public class DriverFactory {
         boolean isJenkins = System.getenv("JENKINS_HOME") != null;
 
         if (browser == null || browser.isEmpty()) {
-            browser = "edge"; // default browser
+            browser = "chrome"; // default browser
         }
 
         switch (browser.toLowerCase()) {
