@@ -16,68 +16,72 @@ public class DriverFactory {
 
         boolean isJenkins = System.getenv("JENKINS_HOME") != null;
 
-        if (browser.equalsIgnoreCase("edge")) {
-
-            System.setProperty(
-                    "webdriver.edge.driver",
-                    "C:\\Drivers\\msedgedriver.exe"
-            );
-
-            EdgeOptions options = new EdgeOptions();
-
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--disable-blink-features=AutomationControlled");
-
-            if (isJenkins) {
-                System.out.println("Running Edge in Jenkins Headless Mode");
-
-                options.addArguments("--headless");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--window-size=1920,1080");
-            } else {
-                System.out.println("Running Edge in Local Mode");
-
-                options.addArguments("--start-maximized");
-            }
-
-            driver = new EdgeDriver(options);
-
+        if (browser == null || browser.isEmpty()) {
+            browser = "edge"; // default browser
         }
 
-        else if (browser.equalsIgnoreCase("chrome")) {
+        switch (browser.toLowerCase()) {
 
-            System.setProperty(
-                    "webdriver.chrome.driver",
-                    "C:\\Drivers\\chromedriver.exe"
-            );
+            case "edge":
 
-            ChromeOptions options = new ChromeOptions();
+                System.setProperty(
+                        "webdriver.edge.driver",
+                        "C:\\Drivers\\msedgedriver.exe"
+                );
 
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--disable-blink-features=AutomationControlled");
+                EdgeOptions edgeOptions = new EdgeOptions();
 
-            if (isJenkins) {
-                System.out.println("Running Chrome in Jenkins Headless Mode");
+                edgeOptions.addArguments("--remote-allow-origins=*");
+                edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
 
-                options.addArguments("--headless");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--window-size=1920,1080");
-            } else {
-                System.out.println("Running Chrome in Local Mode");
+                if (isJenkins) {
+                    System.out.println("Running Edge in Jenkins Headless Mode");
 
-                options.addArguments("--start-maximized");
-            }
+                    edgeOptions.addArguments("--headless=new");
+                    edgeOptions.addArguments("--disable-gpu");
+                    edgeOptions.addArguments("--no-sandbox");
+                    edgeOptions.addArguments("--disable-dev-shm-usage");
+                    edgeOptions.addArguments("--window-size=1920,1080");
 
-            driver = new ChromeDriver(options);
+                } else {
+                    System.out.println("Running Edge in Local Mode");
+                    edgeOptions.addArguments("--start-maximized");
+                }
 
-        }
+                driver = new EdgeDriver(edgeOptions);
+                break;
 
-        else {
-            throw new RuntimeException("Unsupported Browser: " + browser);
+            case "chrome":
+
+                System.setProperty(
+                        "webdriver.chrome.driver",
+                        "C:\\Drivers\\chromedriver.exe"
+                );
+
+                ChromeOptions chromeOptions = new ChromeOptions();
+
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+
+                if (isJenkins) {
+                    System.out.println("Running Chrome in Jenkins Headless Mode");
+
+                    chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--disable-gpu");
+                    chromeOptions.addArguments("--no-sandbox");
+                    chromeOptions.addArguments("--disable-dev-shm-usage");
+                    chromeOptions.addArguments("--window-size=1920,1080");
+
+                } else {
+                    System.out.println("Running Chrome in Local Mode");
+                    chromeOptions.addArguments("--start-maximized");
+                }
+
+                driver = new ChromeDriver(chromeOptions);
+                break;
+
+            default:
+                throw new RuntimeException("Unsupported Browser: " + browser);
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
