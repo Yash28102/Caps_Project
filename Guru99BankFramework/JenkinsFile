@@ -21,7 +21,22 @@ pipeline {
                 bat 'dir /s'
             }
         }
-
+	stage('Compile') {
+            steps {
+				dir('Guru99BankFramework'){
+                bat 'mvn compile'
+            }
+        }
+        }
+ 
+        stage('Test') {
+            steps {
+				dir('Guru99BankFramework'){
+                bat 'mvn test'
+            }
+        }
+        }
+ 
         stage('Build and Test') {
             steps {
                 dir('Guru99BankFramework') {
