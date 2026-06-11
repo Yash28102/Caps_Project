@@ -12,4 +12,4 @@ COPY . .
 
 RUN mvn clean install -DskipTests
 
-CMD ["mvn", "clean", "test", "-DrunMode=docker", "-Dbrowser=chrome"]
+CMD ["mvn","test"]
