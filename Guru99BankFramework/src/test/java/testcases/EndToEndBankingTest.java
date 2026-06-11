@@ -1,6 +1,9 @@
 package testcases;
 
 import base.BaseTest;
+
+import java.io.IOException;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
@@ -8,6 +11,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.*;
 import utilities.ConfigReader;
+import utilities.ExcelUtility;
+import utilities.ManagerExcelUtility;
 import utilities.ScreenshotUtil;
 
 @Listeners(base.TestListener.class)
@@ -44,14 +49,16 @@ public class EndToEndBankingTest extends BaseTest {
     public void testLoginModule() {
         LoginPage lp = new LoginPage(driver);
         lp.login(ConfigReader.getProperty("username"), ConfigReader.getProperty("password"));
-       // ScreenshotUtil.takeScreenshot(driver, "Login");
+		// ScreenshotUtil.takeScreenshot(driver, "Login");
+        ManagerExcelUtility.writeManagerCredentials("mngr662552","umybyny");
+
         handleAlertSafely();
         goToHome();
     }
 
     // ------------------- CREATE CUSTOMER 1 -------------------
     @Test(priority = 2, description = "CREATE CUSTOMER 1")
-    public void testNewCustomer1Module() {
+    public void testNewCustomer1Module() throws IOException {
 
         goToHome();
 
@@ -73,13 +80,28 @@ public class EndToEndBankingTest extends BaseTest {
         );
        // ScreenshotUtil.takeScreenshot(driver, "NewCustomer1");
         handleAlertSafely();
-
+        ExcelUtility.writeData(
+        		"src/test/resources/TestData.xlsx",
+                "Jane Doe Corporate",
+                "14051992",
+                "75 Innovation Way",
+                "Austin",
+                "Texas",
+                "733011",
+                "9876543210",
+                uniqueEmail1,
+                "yash123",
+                "Savings",
+                "8500"
+                
+        );
         // CREATE ACCOUNT 1 FOR CUSTOMER 1
         AccountPage ap = new AccountPage(driver);
         ap.clickNewAccount();
         accountId1 = ap.createAccount(customerId1, "Savings", "8500");
 
         handleAlertSafely();
+        
 
         System.out.println("Customer 1 ID: " + customerId1);
         System.out.println("Account 1 ID: " + accountId1);
@@ -91,7 +113,7 @@ public class EndToEndBankingTest extends BaseTest {
 
     // ------------------- CREATE CUSTOMER 2 -------------------
     @Test(priority = 3, description = "CREATE CUSTOMER 2")
-    public void testNewCustomer2Module() {
+    public void testNewCustomer2Module() throws IOException {
 
         goToHome();
 
@@ -113,13 +135,27 @@ public class EndToEndBankingTest extends BaseTest {
         );
         //ScreenshotUtil.takeScreenshot(driver, "NewCustomer2");
         handleAlertSafely();
-
+        ExcelUtility.writeData(
+        		"src/test/resources/TestData.xlsx",
+                "Pablo Picaso",
+                "14051993",
+                "75 Innovation Way",
+                "Austin",
+                "Texas",
+                "733011",
+                "9876543220",
+                uniqueEmail2,
+                "garg123",
+                "Savings",
+                "8500"
+        );
         // CREATE ACCOUNT 2 FOR CUSTOMER 2
         AccountPage ap = new AccountPage(driver);
         ap.clickNewAccount();
         accountId2 = ap.createAccount(customerId2, "Savings", "8500");
 
         handleAlertSafely();
+        
 
         System.out.println("Customer 2 ID: " + customerId2);
         System.out.println("Account 2 ID: " + accountId2);
@@ -157,25 +193,8 @@ public class EndToEndBankingTest extends BaseTest {
         Assert.assertNotNull(transferMsg, "Transfer message should not be null");
     }
 
-   /* @Test(priority = 7, description = "BALANCE ENQUIRY")
-    public void testBalanceEnquiryModule() {
-        goToHome();
-        BalanceEnquiryPage bep = new BalanceEnquiryPage(driver);
-        String balance = bep.checkBalance("183222");
-        handleAlertSafely();
-        Assert.assertNotNull(balance, "Balance should not be null");
-    }
-
-    @Test(priority = 8, description = "MINI STATEMENT")
-    public void testMiniStatementModule() {
-        goToHome();
-        MiniStatementPage msp = new MiniStatementPage(driver);
-        String miniMsg = msp.getMiniStatement("183222");
-        handleAlertSafely();
-        Assert.assertNotNull(miniMsg, "Mini statement should not be null");
-    }*/
-
-    @Test(priority = 9, description = "CUSTOM STATEMENT")
+  
+    @Test(priority = 7, description = "CUSTOM STATEMENT")
     public void testCustomStatementModule() {
         goToHome();
         CustomStatementPage csp = new CustomStatementPage(driver);
@@ -184,7 +203,7 @@ public class EndToEndBankingTest extends BaseTest {
         Assert.assertNotNull(customMsg, "Custom statement should not be null");
     }
 
-    @Test(priority = 10, description = "EDIT ACCOUNT")
+    @Test(priority = 8, description = "EDIT ACCOUNT")
     public void testEditAccountModule() {
         goToHome();
         driver.get("https://demo.guru99.com/V4/manager/editAccount.php?accountno=" + accountId1);
@@ -192,7 +211,7 @@ public class EndToEndBankingTest extends BaseTest {
         Assert.assertTrue(driver.getTitle().contains("Edit Account"));
     }
 
-    @Test(priority = 11, description = "CHANGE PASSWORD")
+    @Test(priority = 9, description = "CHANGE PASSWORD")
     public void testChangePasswordModule() {
         goToHome();
         ChangePasswordPage cpp = new ChangePasswordPage(driver);
@@ -208,7 +227,7 @@ public class EndToEndBankingTest extends BaseTest {
         System.out.println("Password changed from " + oldPwd + " to " + newPwd);
     }
 
-    @Test(priority = 12, description = "DELETE ACCOUNT")
+    @Test(priority = 10, description = "DELETE ACCOUNT")
     public void testDeleteAccountModule() {
         goToHome();
         driver.get("https://demo.guru99.com/V4/manager/deleteAccountInput.php?accountno=" + accountId1);
@@ -218,7 +237,7 @@ public class EndToEndBankingTest extends BaseTest {
         Assert.assertTrue(driver.getTitle().contains("Delete Account"));
     }
 
-    @Test(priority = 13, description = "DELETE CUSTOMER")
+    @Test(priority = 11, description = "DELETE CUSTOMER")
     public void testDeleteCustomerModule() {
         goToHome();
         driver.get("https://demo.guru99.com/V4/manager/DeleteCustomerInput.php?cusid=" + customerId1);
@@ -228,7 +247,7 @@ public class EndToEndBankingTest extends BaseTest {
         Assert.assertTrue(driver.getTitle().contains("Delete Customer"));
     }
 
-    @Test(priority = 14, description = "LOGOUT")
+    @Test(priority = 12, description = "LOGOUT")
     public void testLogoutModule() {
         goToHome();
         LogoutPage lop = new LogoutPage(driver);
