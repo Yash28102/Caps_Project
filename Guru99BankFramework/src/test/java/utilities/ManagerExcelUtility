@@ -1,0 +1,52 @@
+package utilities;
+
+import java.io.*;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ManagerExcelUtility {
+
+    public static void writeManagerCredentials(String username, String password) {
+
+        String path = "src/test/resources/ManagerCredentials.xlsx";
+
+        try {
+            File file = new File(path);
+            Workbook workbook;
+            Sheet sheet;
+
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                workbook = new XSSFWorkbook(fis);
+                fis.close();
+            } else {
+                workbook = new XSSFWorkbook();
+            }
+
+            sheet = workbook.getSheet("Manager");
+
+            if (sheet == null) {
+                sheet = workbook.createSheet("Manager");
+
+                Row header = sheet.createRow(0);
+                header.createCell(0).setCellValue("Manager Username");
+                header.createCell(1).setCellValue("Manager Password");
+            }
+
+            int rowNum = sheet.getLastRowNum() + 1;
+
+            Row row = sheet.createRow(rowNum);
+            row.createCell(0).setCellValue(username);
+            row.createCell(1).setCellValue(password);
+
+            FileOutputStream fos = new FileOutputStream(path);
+            workbook.write(fos);
+
+            fos.close();
+            workbook.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
