@@ -53,11 +53,6 @@ public class DriverFactory {
 
             case "chrome":
 
-                System.setProperty(
-                        "webdriver.chrome.driver",
-                        "C:\\Drivers\\chromedriver.exe"
-                );
-
                 ChromeOptions chromeOptions = new ChromeOptions();
 
                 chromeOptions.addArguments("--remote-allow-origins=*");
