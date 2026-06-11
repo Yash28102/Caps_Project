@@ -3,6 +3,7 @@ package base;
 import java.io.File;
 import java.time.Duration;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,37 +25,40 @@ public class DriverFactory {
 
         case "chrome":
 
-            ChromeOptions chromeOptions = new ChromeOptions();
+            ChromeOptions options = new ChromeOptions();
 
-            // General options
-            chromeOptions.addArguments("--remote-allow-origins=*");
-            chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-            chromeOptions.addArguments("--disable-extensions");
-            chromeOptions.addArguments("--disable-infobars");
-            chromeOptions.setAcceptInsecureCerts(true);
+            // General
+            options.setAcceptInsecureCerts(true);
+            options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
-            // Docker/Jenkins/Linux Headless
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--disable-blink-features=AutomationControlled");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--disable-infobars");
+
             if (isJenkins || isDocker) {
 
                 System.out.println("Running Chrome in Docker/Jenkins Headless Mode");
 
-                chromeOptions.addArguments("--headless=new");
-                chromeOptions.addArguments("--no-sandbox");
-                chromeOptions.addArguments("--disable-dev-shm-usage");
-                chromeOptions.addArguments("--disable-gpu");
-                chromeOptions.addArguments("--window-size=1920,1080");
+                options.addArguments("--headless=new");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
 
-                // Uncomment if your Docker image requires it
-                // chromeOptions.setBinary("/usr/bin/google-chrome");
+                options.addArguments("--disable-background-networking");
+                options.addArguments("--disable-sync");
+                options.addArguments("--metrics-recording-only");
+                options.addArguments("--mute-audio");
+                options.addArguments("--disable-default-apps");
 
             } else {
 
                 System.out.println("Running Chrome in Local Mode");
-
-                chromeOptions.addArguments("--start-maximized");
+                options.addArguments("--start-maximized");
             }
 
-            driver = new ChromeDriver(chromeOptions);
+            driver = new ChromeDriver(options);
             break;
 
         default:
@@ -62,7 +66,7 @@ public class DriverFactory {
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 
         return driver;
