@@ -1,12 +1,11 @@
 package base;
 
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 
 public class DriverFactory {
 
@@ -15,72 +14,56 @@ public class DriverFactory {
     public static WebDriver initDriver(String browser) {
 
         boolean isJenkins = System.getenv("JENKINS_HOME") != null;
+        boolean isDocker = new File("/.dockerenv").exists();
 
-        if (browser == null || browser.isEmpty()) {
-            browser = "chrome"; // default browser
+        if (browser == null || browser.trim().isEmpty()) {
+            browser = "chrome";
         }
 
         switch (browser.toLowerCase()) {
 
-//            case "edge":
-//
-//                System.setProperty(
-//                        "webdriver.edge.driver",
-//                        "C:\\Drivers\\msedgedriver.exe"
-//                );
-//
-//                EdgeOptions edgeOptions = new EdgeOptions();
-//
-//                edgeOptions.addArguments("--remote-allow-origins=*");
-//                edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
-//
-//                if (isJenkins) {
-//                    System.out.println("Running Edge in Jenkins Headless Mode");
-//
-//                    edgeOptions.addArguments("--headless=new");
-//                    edgeOptions.addArguments("--disable-gpu");
-//                    edgeOptions.addArguments("--no-sandbox");
-//                    edgeOptions.addArguments("--disable-dev-shm-usage");
-//                    edgeOptions.addArguments("--window-size=1920,1080");
-//
-//                } else {
-//                    System.out.println("Running Edge in Local Mode");
-//                    edgeOptions.addArguments("--start-maximized");
-//                }
-//
-//               // driver = new EdgeDriver(edgeOptions);
-//                break;
+        case "chrome":
 
-            case "chrome":
+            ChromeOptions chromeOptions = new ChromeOptions();
 
-                ChromeOptions chromeOptions = new ChromeOptions();
+            // General options
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+            chromeOptions.addArguments("--disable-extensions");
+            chromeOptions.addArguments("--disable-infobars");
+            chromeOptions.setAcceptInsecureCerts(true);
 
-                chromeOptions.addArguments("--remote-allow-origins=*");
-                chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+            // Docker/Jenkins/Linux Headless
+            if (isJenkins || isDocker) {
 
-                if (isJenkins) {
-                    System.out.println("Running Chrome in Jenkins Headless Mode");
+                System.out.println("Running Chrome in Docker/Jenkins Headless Mode");
 
-                    chromeOptions.addArguments("--headless=new");
-                    chromeOptions.addArguments("--disable-gpu");
-                    chromeOptions.addArguments("--no-sandbox");
-                    chromeOptions.addArguments("--disable-dev-shm-usage");
-                    chromeOptions.addArguments("--window-size=1920,1080");
+                chromeOptions.addArguments("--headless=new");
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--window-size=1920,1080");
 
-                } else {
-                    System.out.println("Running Chrome in Local Mode");
-                    chromeOptions.addArguments("--start-maximized");
-                }
+                // Uncomment if your Docker image requires it
+                // chromeOptions.setBinary("/usr/bin/google-chrome");
 
-                driver = new ChromeDriver(chromeOptions);
-                break;
+            } else {
 
-            default:
-                throw new RuntimeException("Unsupported Browser: " + browser);
+                System.out.println("Running Chrome in Local Mode");
+
+                chromeOptions.addArguments("--start-maximized");
+            }
+
+            driver = new ChromeDriver(chromeOptions);
+            break;
+
+        default:
+            throw new RuntimeException("Unsupported Browser: " + browser);
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
 
         return driver;
     }
@@ -91,8 +74,13 @@ public class DriverFactory {
 
     public static void quitDriver() {
         if (driver != null) {
-            driver.quit();
-            driver = null;
+            try {
+                driver.quit();
+            } catch (Exception e) {
+                System.out.println("Driver already closed.");
+            } finally {
+                driver = null;
+            }
         }
     }
 }
