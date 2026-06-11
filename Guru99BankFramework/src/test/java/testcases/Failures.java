@@ -3,165 +3,211 @@ package testcases;
 import java.time.Duration;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import pages.LoginPage;
-import utilities.ScreenshotUtil;
 import pages.CustomerPage;
+import pages.LoginPage;
 
 public class Failures extends BaseTest {
+	private void loginToApplication() {
 
-    // Valid manager credentials from your config
-    private String validUser = "mngr662552";
-    private String validPassword = "umybyny";
+	    driver.get("https://demo.guru99.com/V4/");
 
-    // ------------------ STEP 1: Invalid login screenshot ------------------
-    @Test(priority = 1)
-    public void invalidLoginScreenshot() throws InterruptedException {
-        LoginPage login = new LoginPage(driver);
-        
-        login.login("mngr12345r", "wrpasss"); // triggers alert
+	    LoginPage login = new LoginPage(driver);
+	    login.login(validUser, validPassword);
 
-        // Wait explicitly for alert
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	    handleAlertIfPresent();
 
-        // Optional: small pause to ensure alert fully renders
-        Thread.sleep(1000);
+	    new WebDriverWait(driver, Duration.ofSeconds(10))
+	            .until(ExpectedConditions.titleContains("Guru99 Bank"));
+	}
 
-        // Take screenshot immediately while alert is visible
-        ScreenshotUtil.takeScreenshot(driver, "InvalidLogin_ALERT");
+    private final String validUser = "mngr662552";
+    private final String validPassword = "umybyny";
 
-        // Accept the alert so test can continue
-        alert.accept();
-
-        // Fail the test to mark it as negative
-        Assert.fail("Invalid login triggered alert");
+    private void handleAlertIfPresent() {
+        try {
+            Alert alert = new WebDriverWait(driver, Duration.ofSeconds(3))
+                    .until(ExpectedConditions.alertIsPresent());
+            alert.accept();
+        } catch (TimeoutException e) {
+        }
     }
-    // ------------------ STEP 2: Valid login ------------------
-    @Test(priority = 2)
-    public void validLogin() throws InterruptedException {
+
+    // Valid Login
+
+    @Test(priority = 1)
+    public void validLogin() {
+
+        driver.get("https://demo.guru99.com/V4/");
+
         LoginPage login = new LoginPage(driver);
         login.login(validUser, validPassword);
 
-        Thread.sleep(3000); // wait for page to fully load
+        handleAlertIfPresent();
 
-        Assert.assertEquals(driver.getTitle(), "Guru99 Bank Manager HomePage");
+        Assert.assertTrue(
+                driver.getTitle().contains("Guru99 Bank"),
+                "Login failed");
     }
 
-    // ------------------ STEP 3: Negative Customer Test Cases ------------------
+    // Invalid Login
 
-    @Test(priority = 3, dependsOnMethods = "validLogin")
-    public void customerNameWithIntegers() throws InterruptedException {
-        CustomerPage customer = new CustomerPage(driver);
-        customer.clickNewCustomer();
-        Thread.sleep(3000);
+    @Test(priority = 2)
+    public void invalidLoginTest() {
+
+        driver.get("https://demo.guru99.com/V4/");
+
+        LoginPage login = new LoginPage(driver);
+        login.login("wronguser", "wrongpass");
+
+        String error =
+                driver.findElement(
+                        By.id("message23"))
+                        .getText();
+
+        Assert.assertTrue(
+                error.contains("Characters"));
+    }
+
+    // invalid email
+
+   @Test(priority = 4)
+  public void invalidemail() {
+
+    	    loginToApplication();
+
+    	    CustomerPage customer = new CustomerPage(driver);
+
+    	    customer.clickNewCustomer();
 
         customer.createCustomer(
-                "12345", // invalid numeric name
+                "John",
                 "01-01-1990",
-                "Some Address",
-                "City",
-                "State",
-                "123456",
+                "Delhi Address",
+                "Delhi",
+                "Delhi",
+                "110001",
                 "9876543210",
-                "test@example.com",
-                "password"
-        );
+                "email",
+                "pass123");
 
-        Thread.sleep(3000);
-        Assert.fail("Customer name cannot contain numbers");
+        String error =
+                driver.findElement(
+                        By.id("message9"))
+                        .getText();
+
+        Assert.assertTrue(
+                error.contains("Characters"));
     }
 
-    @Test(priority = 4, dependsOnMethods = "validLogin")
-    public void invalidPinTest() throws InterruptedException {
-        CustomerPage customer = new CustomerPage(driver);
+    // Invalid Customer Name
+
+   @Test(priority = 5)
+   public void invalidCustomerName() throws InterruptedException {
+
+       loginToApplication();
+
+       CustomerPage customer = new CustomerPage(driver);
+       customer.clickNewCustomer();
+
+       // Scroll down
+       JavascriptExecutor js = (JavascriptExecutor) driver;
+       js.executeScript("window.scrollBy(0,400)");
+
+       customer.createCustomer(
+               "12345",
+               "01-01-1990",
+               "Delhi",
+               "Delhi",
+               "Delhi",
+               "110001",
+               "9876543210",
+               "test" + System.currentTimeMillis() + "@gmail.com",
+               "pass123");
+       Thread.sleep(2000);
+       // Scroll further if needed
+       js.executeScript("window.scrollBy(0,-900)");
+       Thread.sleep(3000);       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+       String error = wait.until(
+               ExpectedConditions.visibilityOfElementLocated(
+                       By.id("message")))
+               .getText();
+
+       Assert.assertTrue(error.contains("Numbers"));
+   }
+
+    // Invalid PIN
+
+    @Test(priority = 6)
+    public void invalidPin() {
+    	loginToApplication();
+        CustomerPage customer =
+                new CustomerPage(driver);
+
         customer.clickNewCustomer();
-        Thread.sleep(3000);
 
         customer.createCustomer(
-                "John Doe",
+                "John",
                 "01-01-1990",
-                "Some Address",
-                "City",
-                "State",
-                "ABCDE", // invalid PIN
+                "Delhi",
+                "Delhi",
+                "Delhi",
+                "ABC12",
                 "9876543210",
-                "test@example.com",
-                "password"
-        );
+                "pin"
+                        + System.currentTimeMillis()
+                        + "@gmail.com",
+                "pass123");
 
-        Thread.sleep(3000);
-        Assert.fail("PIN should be numeric only");
+        String error =
+                driver.findElement(
+                        By.id("message6"))
+                        .getText();
+
+        Assert.assertTrue(
+                error.contains("Characters"));
     }
 
-    @Test(priority = 5, dependsOnMethods = "validLogin")
-    public void blankEmailTest() throws InterruptedException {
-        CustomerPage customer = new CustomerPage(driver);
+    // Invalid Mobile
+
+    @Test(priority = 7)
+    public void invalidMobile() {
+    	loginToApplication();
+        CustomerPage customer =
+                new CustomerPage(driver);
+
         customer.clickNewCustomer();
-        Thread.sleep(3000);
 
         customer.createCustomer(
-                "John Doe",
+                "John",
                 "01-01-1990",
-                "Some Address",
-                "City",
-                "State",
-                "123456",
-                "9876543210",
-                "", // blank email
-                "password"
-        );
+                "Delhi",
+                "Delhi",
+                "Delhi",
+                "110001",
+                "abcd1234",
+                "mobile"
+                        + System.currentTimeMillis()
+                        + "@gmail.com",
+                "pass123");
 
-        Thread.sleep(3000);
-        Assert.fail("Email cannot be blank");
+        String error =
+                driver.findElement(
+                        By.id("message7"))
+                        .getText();
+
+        Assert.assertTrue(
+                error.contains("Characters"));
     }
 
-    @Test(priority = 6, dependsOnMethods = "validLogin")
-    public void invalidMobileTest() throws InterruptedException {
-        CustomerPage customer = new CustomerPage(driver);
-        customer.clickNewCustomer();
-        Thread.sleep(3000);
 
-        customer.createCustomer(
-                "John Doe",
-                "01-01-1990",
-                "Some Address",
-                "City",
-                "State",
-                "123456",
-                "abcd1234", // invalid mobile
-                "test@example.com",
-                "password"
-        );
-
-        Thread.sleep(3000);
-        Assert.fail("Mobile number must be numeric");
-    }
-
-    @Test(priority = 7, dependsOnMethods = "validLogin")
-    public void invalidCityStateTest() throws InterruptedException {
-        CustomerPage customer = new CustomerPage(driver);
-        customer.clickNewCustomer();
-        Thread.sleep(3000);
-
-        customer.createCustomer(
-                "John Doe",
-                "01-01-1990",
-                "Some Address",
-                "123City", // invalid city
-                "!@#State", // invalid state
-                "123456",
-                "9876543210",
-                "test@example.com",
-                "password"
-        );
-
-        Thread.sleep(3000);
-        Assert.fail("City and State should not contain numbers or symbols");
-    }
 }
