@@ -64,7 +64,7 @@ pipeline {
 stage('Docker Run') {
             steps {
                 dir('Guru99BankFramework') {
-                    bat 'docker run -rm testng-framework'
+                    bat 'docker run testng-framework'
                 }
             }
         }
